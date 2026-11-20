@@ -54,4 +54,12 @@ class LibroTest {
 
         assertTrue(libro.esMismoTitulo(otroTitulo));
     }
+
+    @Test
+    void deberiaCompararTitulosNulosSinLanzarExcepcion() {
+        Libro libro = new Libro(null, "Autor desconocido");
+
+        assertTrue(libro.esMismoTitulo(null));
+        assertFalse(libro.esMismoTitulo(""));
+    }
 }
